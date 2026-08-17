@@ -1,0 +1,32 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.3,
+    "max_depth": 1,
+    "permissions": [
+      "crm.read",
+      "crm.write"
+    ]
+  },
+  "capabilities": [
+    "crm.hygiene",
+    "crm.enrich"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "revenue",
+  "eval_suite": "evals/revenue/hygiene_v1.yaml",
+  "grade": "B",
+  "id": "agent://revenue/pipeline-keeper",
+  "job": "Weekly sweep for stale deals, missing fields and single-threaded accounts. Writes to the CRM, never to a customer.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own",
+    "department"
+  ],
+  "name": "Pipeline Keeper",
+  "phase": 4,
+  "retirement_criteria": "retire if fewer than 10 corrections a month for two months",
+  "runtime": "claude-code"
+}

@@ -1,0 +1,31 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.25,
+    "max_depth": 1,
+    "permissions": [
+      "support.draft",
+      "support.read"
+    ]
+  },
+  "capabilities": [
+    "support.draft"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "customer",
+  "eval_suite": "evals/customer/draft_v1.yaml",
+  "grade": "C",
+  "id": "agent://customer/reply-drafter",
+  "job": "Drafts from the knowledge base with a no-commitment guard. Earns auto-send per bucket; never for billing or contracts.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own",
+    "department"
+  ],
+  "name": "Reply Drafter",
+  "phase": 4,
+  "retirement_criteria": "retire if human edit distance on drafts exceeds 50% for a month",
+  "runtime": "claude-code"
+}

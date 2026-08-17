@@ -1,0 +1,37 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 4.0,
+    "max_depth": 2,
+    "permissions": [
+      "code.implement",
+      "fs.write",
+      "git.commit",
+      "net.fetch",
+      "repo.refactor",
+      "test.author"
+    ]
+  },
+  "capabilities": [
+    "code.implement",
+    "repo.refactor",
+    "test.author"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "engineering",
+  "eval_suite": "evals/eng/implementation_v1.yaml",
+  "grade": "A",
+  "id": "agent://eng/implementation",
+  "job": "Takes a contract with tests attached and lands the change on a branch. Refuses tasks without machine-checkable criteria.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own",
+    "project"
+  ],
+  "name": "Implementation",
+  "phase": 2,
+  "retirement_criteria": "retire if verified success falls below 0.70 in its primary bucket over 30 outcomes",
+  "runtime": "claude-code"
+}

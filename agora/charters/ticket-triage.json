@@ -1,0 +1,32 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.15,
+    "max_depth": 1,
+    "permissions": [
+      "support.read",
+      "support.route"
+    ]
+  },
+  "capabilities": [
+    "support.triage",
+    "support.dedupe"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "customer",
+  "eval_suite": "evals/customer/triage_v1.yaml",
+  "grade": "B",
+  "id": "agent://customer/ticket-triage",
+  "job": "Prioritises, dedupes and routes. Sorts but never answers \u2014 answering is a different authority envelope.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own",
+    "department"
+  ],
+  "name": "Ticket Triage",
+  "phase": 4,
+  "retirement_criteria": "retire if mis-routing exceeds 8% over 200 tickets",
+  "runtime": "claude-code"
+}

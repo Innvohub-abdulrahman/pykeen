@@ -1,0 +1,32 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.6,
+    "max_depth": 1,
+    "permissions": [
+      "code.review",
+      "fs.read",
+      "verify.rubric"
+    ]
+  },
+  "capabilities": [
+    "code.review",
+    "verify.rubric"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "engineering",
+  "eval_suite": "evals/eng/review_v1.yaml",
+  "grade": "A",
+  "id": "agent://eng/code-reviewer",
+  "job": "Scores changes against criteria while blind to the author's reasoning. Deliberately starved of context.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own"
+  ],
+  "name": "Code Reviewer",
+  "phase": 2,
+  "retirement_criteria": "retire if its verdicts and the deterministic checks disagree on more than 15% of artifacts",
+  "runtime": "claude-code"
+}

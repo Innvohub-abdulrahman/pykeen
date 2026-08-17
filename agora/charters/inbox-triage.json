@@ -1,0 +1,33 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.05,
+    "max_depth": 1,
+    "permissions": [
+      "email.draft",
+      "email.read"
+    ]
+  },
+  "capabilities": [
+    "email.classify",
+    "email.draft"
+  ],
+  "data_classes": [
+    "internal",
+    "personal"
+  ],
+  "department": "personal",
+  "eval_suite": "evals/personal/inbox_v1.yaml",
+  "grade": "B",
+  "id": "agent://personal/inbox-triage",
+  "job": "Classifies ~200 messages a day locally at zero marginal cost. Roughly 15 warrant a reply; those get a draft. Never sends.",
+  "local_inference_only": true,
+  "memory_scopes": [
+    "agent-own",
+    "personal"
+  ],
+  "name": "Inbox Triage",
+  "phase": 1,
+  "retirement_criteria": "retire if draft acceptance falls below 40% for a month, or if misclassification of urgent mail exceeds 2%",
+  "runtime": "claude-code"
+}

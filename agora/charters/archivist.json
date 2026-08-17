@@ -1,0 +1,31 @@
+{
+  "agent_class": "control-plane",
+  "authority": {
+    "max_cost_usd": 0.1,
+    "max_depth": 1,
+    "permissions": [
+      "fleet.propose",
+      "fleet.read"
+    ]
+  },
+  "capabilities": [
+    "fleet.audit",
+    "fleet.archive_propose"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "control",
+  "eval_suite": "evals/control/archivist_v1.yaml",
+  "grade": "A",
+  "id": "agent://control/archivist",
+  "job": "Monthly entropy sweep \u2014 idle agents, dead skills, stale ledger entries. Proposes only.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own"
+  ],
+  "name": "Archivist",
+  "phase": 5,
+  "retirement_criteria": "retire if it proposes nothing for three consecutive sweeps",
+  "runtime": "claude-code"
+}

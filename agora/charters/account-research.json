@@ -1,0 +1,31 @@
+{
+  "agent_class": "ephemeral",
+  "authority": {
+    "max_cost_usd": 0.5,
+    "max_depth": 1,
+    "permissions": [
+      "account.research",
+      "crm.read",
+      "net.fetch"
+    ]
+  },
+  "capabilities": [
+    "account.research"
+  ],
+  "data_classes": [
+    "internal"
+  ],
+  "department": "revenue",
+  "eval_suite": "evals/revenue/account_v1.yaml",
+  "grade": "B",
+  "id": "agent://revenue/account-research",
+  "job": "One-page brief before a call. Drops unsourced claims rather than hedging them.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "task"
+  ],
+  "name": "Account Research",
+  "phase": 4,
+  "retirement_criteria": "retire if briefs go unopened before 50% of calls",
+  "runtime": "claude-code"
+}

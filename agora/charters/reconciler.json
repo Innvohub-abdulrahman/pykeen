@@ -1,0 +1,34 @@
+{
+  "agent_class": "persistent",
+  "authority": {
+    "max_cost_usd": 0.9,
+    "max_depth": 1,
+    "permissions": [
+      "finance.read",
+      "finance.reconcile",
+      "finance.trace"
+    ]
+  },
+  "capabilities": [
+    "finance.reconcile",
+    "finance.trace"
+  ],
+  "data_classes": [
+    "confidential",
+    "internal"
+  ],
+  "department": "finance",
+  "eval_suite": "evals/finance/reconcile_v1.yaml",
+  "grade": "A",
+  "id": "agent://finance/reconciler",
+  "job": "Ties settlements to the ledger monthly and flags every gap with its source row. Cannot hand you an untraceable figure.",
+  "local_inference_only": false,
+  "memory_scopes": [
+    "agent-own",
+    "department"
+  ],
+  "name": "Reconciler",
+  "phase": 3,
+  "retirement_criteria": "retire if any month closes with an unexplained variance",
+  "runtime": "claude-code"
+}
